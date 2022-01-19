@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"//generate json execution report to be used for html report
         },
         features = "src/test/resources/features",
-        glue = "com/cybertek/step_definitions",
+        glue = "com/project/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@negative"
 )
 public class CukesRunner {
 }

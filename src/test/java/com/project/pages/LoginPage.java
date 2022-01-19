@@ -22,4 +22,9 @@ public class LoginPage {
         loginField.sendKeys(username);
         passwordField.sendKeys(password + Keys.ENTER);
     }
+
+    @FindBy(xpath = "//div[@class='alert alert-error']")
+    public WebElement actualErrorMessage;
+
+
 }

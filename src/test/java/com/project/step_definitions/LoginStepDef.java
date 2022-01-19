@@ -32,5 +32,8 @@ public class LoginStepDef {
 
     }
 
-
+    @Then("error message {string} should be displayed")
+    public void errorMessageShouldBeDisplayed(String expectedErrorMessage) {
+        Assert.assertEquals("Error message doesn't match", expectedErrorMessage,loginPage.actualErrorMessage.getText());
+    }
 }
