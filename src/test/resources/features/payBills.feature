@@ -6,7 +6,7 @@
     @paybills
     Scenario: User should be able to pay bills when all the required bills are fill accurately
       Given User is on the pay bills page
-      And the "Zero – Pay Bills" title is displayed
+      And the "Zero - Pay Bills" title is displayed
       When User click on payee box and select "Bank of America"
       And User clicks on account box and selects "Checking"
       And User clicks on amount box and enters "1000"
