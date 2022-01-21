@@ -35,7 +35,7 @@ public class PayBillsStepDefs {
 
     @When("User clicks on amount box and enters {string}")
     public void user_clicks_on_amount_box_and_enters(String amount) {
-        payBillsPage.accountBox.sendKeys(amount);
+        payBillsPage.amountBox.sendKeys(amount);
     }
 
     @When("User click on date box and enters {string}")

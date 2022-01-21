@@ -29,7 +29,7 @@ public class PayBillsPage {
     @FindBy(id = "pay_saved_payees")
     public WebElement payButton;
 
-    @FindBy(xpath = "//span[.='The payment was successfully submitted.']")
+    @FindBy(xpath = "//span[@title='$ 1000 payed to payee bofa']")
     public WebElement successMsg;
 
 
