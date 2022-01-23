@@ -5,7 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class BrowserUtils {
 
@@ -38,6 +40,21 @@ public class BrowserUtils {
 
         //Create placeholder List<String>
         List<String> actualAsString = new ArrayList<>();
+
+        for (WebElement each : webElementList) {
+
+            actualAsString.add(each.getText());
+
+        }
+
+        return actualAsString;
+
+    }
+
+    public static Set<String> getElementsTextWithoutDouble(List<WebElement> webElementList){
+
+        //Create placeholder List<String>
+        Set<String> actualAsString = new HashSet<>();
 
         for (WebElement each : webElementList) {
 
