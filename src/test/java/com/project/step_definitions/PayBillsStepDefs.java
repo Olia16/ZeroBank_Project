@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
@@ -56,8 +57,13 @@ public class PayBillsStepDefs {
 
     @Then("{string} should be displayed")
     public void should_be_displayed(String expectedMsg) {
-        String actualMsg = payBillsPage.successMsg.getText();
-        Assert.assertEquals("Message doesn't match",expectedMsg,actualMsg);
+        if(payBillsPage.successMsg.isDisplayed()){
+            String actualMsg = payBillsPage.successMsg.getText();
+            Assert.assertEquals("Message doesn't match",expectedMsg,actualMsg);
+        }else if(!payBillsPage.successMsg.isDisplayed()){
+            Alert alert = Driver.getDriver().switchTo().alert();
+            Assert.assertEquals("Alert message doesn't match",expectedMsg,alert.getText());
+        }
     }
 
 }
