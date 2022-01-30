@@ -57,10 +57,11 @@ public class PayBillsStepDefs {
 
     @Then("{string} should be displayed")
     public void should_be_displayed(String expectedMsg) {
-        if(payBillsPage.successMsg.isDisplayed()){
+        //TODO (need to fix exception)
+        if(payBillsPage.successMsg.isEnabled()){
             String actualMsg = payBillsPage.successMsg.getText();
             Assert.assertEquals("Message doesn't match",expectedMsg,actualMsg);
-        }else if(!payBillsPage.successMsg.isDisplayed()){
+        }else if(!payBillsPage.successMsg.isEnabled()){
             Alert alert = Driver.getDriver().switchTo().alert();
             Assert.assertEquals("Alert message doesn't match",expectedMsg,alert.getText());
         }
