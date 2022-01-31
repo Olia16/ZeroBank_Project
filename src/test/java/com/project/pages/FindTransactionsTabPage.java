@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class FindTransactionsTabPage {
 
     public FindTransactionsTabPage(){
@@ -14,13 +16,16 @@ public class FindTransactionsTabPage {
     public WebElement findTransactionsTab;
 
     @FindBy(id = "aa_fromDate")
-    public WebElement dateFrom;
+    public WebElement dateFromField;
 
     @FindBy(id = "aa_toDate")
-    public WebElement toDate;
+    public WebElement toDateField;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement findBtn;
+
+    @FindBy(xpath = "//div[@id='filtered_transactions_for_account']//tbody/tr//td[1]")
+    public List<WebElement> resultDates;
 
 
 
