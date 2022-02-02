@@ -19,4 +19,20 @@ public class AccountSummaryPage {
     @FindBy(xpath = "(//table)[3]//thead/tr/th")
     public List<WebElement>creditAccColumns;
 
+    @FindBy(linkText = "Savings")
+    public WebElement savings;
+
+    @FindBy(linkText = "Brokerage")
+    public WebElement brokerage;
+
+    @FindBy(linkText = "Checking")
+    public WebElement checking;
+
+    @FindBy(linkText = "Credit Card")
+    public WebElement creditCard;
+
+    @FindBy(linkText = "Loan")
+    public WebElement loan;
+
+
 }
