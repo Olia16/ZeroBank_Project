@@ -1,3 +1,4 @@
+@regression
 Feature: Account Activity functions
 
   Background: Login Step
