@@ -1,4 +1,4 @@
-
+@regression
 Feature: Account Summary
 
   Background: Login step
