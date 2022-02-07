@@ -2,7 +2,7 @@ Feature: Navigating to specific accounts in Accounts Activity
   Background: Login step
     Given User is on the login page
     When  User enters username "username" and password "password"
-  @smoke
+  @smoke @regression
   Scenario: Savings account redirect
     When the user clicks on "Savings" link on the Account Summary page
     Then the "Zero - Account Activity" page should be displayed
