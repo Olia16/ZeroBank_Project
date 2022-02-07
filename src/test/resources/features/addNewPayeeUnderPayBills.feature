@@ -4,7 +4,7 @@ Feature: Add new payee under bills
     Given User is on the login page
     And User enters username "username" and password "password"
 
-    @wip
+    @wip @regression
   Scenario: Add a new payee
 
     Given User is on the pay bills page
