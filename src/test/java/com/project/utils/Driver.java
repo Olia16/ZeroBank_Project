@@ -6,7 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -64,6 +67,19 @@ public class Driver {
                         driverPool.set(new ChromeDriver(capability));
                         driverPool.get().manage().window().maximize();
                         driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                        break;
+                    case "remote-chrome":
+                        try {
+                            // assign your grid server address
+                            String gridAddress = "54.234.226.188";
+                            URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                            capability= new ChromeOptions();
+                            capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS,true);
+                            capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,true);
+                            driverPool.set(new RemoteWebDriver(url, capability));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         break;
                 }
             }
