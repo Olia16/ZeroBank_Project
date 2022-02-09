@@ -1,10 +1,11 @@
+@regression
 Feature: Account Activity functions
 
   Background: Login Step
     Given User is on the login page
     And User enters username "username" and password "password"
 
-  @activity
+  @activity @smoke
   Scenario: Account activity features
     And the user navigates to Account Activity page
     Then the "Zero - Account Activity" page should be displayed

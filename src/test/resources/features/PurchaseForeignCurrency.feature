@@ -2,7 +2,7 @@ Feature: Purchase Foreign Currency
   Background:
     Given the user is logged in
     And User is on the pay bills page
-
+  @smoke @regression
   Scenario: Available currencies
     Given the user accesses the Purchase Foreign Currency tab
     Then following currencies should be available
