@@ -52,7 +52,9 @@ public class FindTransactionsStepDefs {
         //converting result dates into list of string
         List<String> dateAsString = BrowserUtils.getElementsText(transactionsTabPage.resultDates);
         List<Date> actualDates = new ArrayList<>();
+        BrowserUtils.sleep(2);
         for(String eachDate : dateAsString){
+            BrowserUtils.sleep(2);
             actualDates.add(dateFormat.parse(eachDate));
         }
         for (Date actualDate : actualDates){
@@ -158,6 +160,5 @@ public class FindTransactionsStepDefs {
             Assert.assertEquals("",each.getText());
         }
     }
-
 
 }
