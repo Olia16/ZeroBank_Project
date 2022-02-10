@@ -36,7 +36,7 @@ public class PurchaseForeignCurrencyStepDefs {
 
     @Given("the user accesses the Purchase Foreign Currency tab")
     public void the_user_accesses_the_purchase_foreign_currency_tab()  {
-
+        BrowserUtils.sleep(1);
         WebElement purchaseForeignCurrencyBtn = Driver.getDriver().findElement(By.linkText("Purchase Foreign Currency"));
         purchaseForeignCurrencyBtn.click();
     }

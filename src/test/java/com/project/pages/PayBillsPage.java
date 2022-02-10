@@ -44,7 +44,7 @@ public class PayBillsPage {
     public  WebElement userNameField;
 
     @FindBy(id = "user_password")
-    public static WebElement passwordField;
+    public WebElement passwordField;
 
 
 
